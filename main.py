@@ -1,4 +1,4 @@
-!pip install openai
+import openai
 import base64
 import streamlit as st
 #import plotly.express as px
@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 import json
 import pickle
 import re
-import openai
+
 from senha import API_KEY
 from itertools import zip_longest
 #from pandasai import PandasAI
