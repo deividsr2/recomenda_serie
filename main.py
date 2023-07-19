@@ -17,8 +17,7 @@ from st_aggrid import AgGrid
 
 
 # Configurar a API do OpenAI
-openai.api_key = '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'
-
+openai.api_key = st.secrets["auth_token"]
 
 #configurações do background de fundo//////////////////////////////////////////////////////////////////////////////////
 @st.cache_data
