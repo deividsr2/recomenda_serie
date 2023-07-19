@@ -7,7 +7,7 @@ import json
 import pickle
 import re
 import openai
-from senha import API_KEY
+
 from itertools import zip_longest
 #from pandasai import PandasAI
 #from pandasai.llm.openai import OpenAI
