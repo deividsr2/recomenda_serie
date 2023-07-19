@@ -1,23 +1,27 @@
 import base64
 import streamlit as st
-import plotly.express as px
+#import plotly.express as px
 import pandas as pd
 import streamlit.components.v1 as components
 import json
 import pickle
 import re
 import openai
-
+from senha import API_KEY
 from itertools import zip_longest
 #from pandasai import PandasAI
 #from pandasai.llm.openai import OpenAI
 from st_aggrid import AgGrid
 
 
-
+#video https://www.youtube.com/watch?v=vw0I8i7QJRk
 
 # Configurar a API do OpenAI
 openai.api_key = st.secrets["auth_token"]
+
+
+
+
 
 #configurações do background de fundo//////////////////////////////////////////////////////////////////////////////////
 @st.cache_data
@@ -129,19 +133,21 @@ novo_df = df2.merge(df3, left_on='Nome', right_on='nome')[colunas_desejadas]
 #----------------------------------------------------------------------
 #plotanto o grafico
 # Plotando o gráfico de barras
-fig = px.bar(novo_df, x='Nota média IMDB', y='Nome', orientation='h', text='Nota média IMDB')
+
+#------------------------descomentar---------------------------------------------------------------
+#fig = px.bar(novo_df, x='Nota média IMDB', y='Nome', orientation='h', text='Nota média IMDB')
 
 # Configurações do layout do gráfico
-fig.update_layout(
-    title='Notas Médias IMDB por Nome',
-    xaxis_title='Nota Média IMDB',
-    yaxis_title='Nome',
-    yaxis_categoryorder='total ascending',
-    showlegend=False
-)
+#fig.update_layout(
+#    title='Notas Médias IMDB por Nome',
+#   xaxis_title='Nota Média IMDB',
+#    yaxis_title='Nome',
+#    yaxis_categoryorder='total ascending',
+#    showlegend=False
+#)
 
 # Exibindo o gráfico no Streamlit
-st.plotly_chart(fig)
+#st.plotly_chart(fig)
 #---------------aqui é feito os filtros dos dados a serem exibidos------------------------------
 # Função para obter nome ou retornar 0 se a linha não existir
 def obter_nome (novo_df, indice):
