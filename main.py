@@ -1,13 +1,17 @@
-import openai
 import base64
 import streamlit as st
-#import plotly.express as px
+import plotly.express as px
 import pandas as pd
 import streamlit.components.v1 as components
 import json
 import pickle
 import re
+import openai
 
+from itertools import zip_longest
+#from pandasai import PandasAI
+#from pandasai.llm.openai import OpenAI
+from st_aggrid import AgGrid
 
 
 #video https://www.youtube.com/watch?v=vw0I8i7QJRk
